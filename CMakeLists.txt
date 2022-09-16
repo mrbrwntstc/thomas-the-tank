@@ -8,6 +8,11 @@ project ("Hazel"
   LANGUAGES "C" "CXX"
 )
 
+if(NOT CMAKE_CXX_STANDARD)
+    set(CMAKE_CXX_STANDARD 11)
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+endif()
+
 # Include sub-projects.
 add_subdirectory ("engine")
 add_subdirectory("sandbox")

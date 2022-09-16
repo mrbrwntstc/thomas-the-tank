@@ -6,10 +6,13 @@ add_subdirectory("hazel")
 
 add_library(hazel_engine SHARED "hazel_engine.h")
 
-target_link_libraries(hazel_engine PUBLIC ${hazel_LIB})
+target_link_libraries(hazel_engine
+PUBLIC 
+  ${hazel_LIB}
+)
 
 target_include_directories(hazel_engine
-PUBLIC
+INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 )
 

@@ -11,6 +11,8 @@ add_library(${PROJECT_NAME} OBJECT
   "application.h"
   "core.h"
   "entry_point.h"
+  "log.cpp"
+  "log.h"
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -23,3 +25,5 @@ PRIVATE
   $<$<PLATFORM_ID:Windows>:HZ_PLATFORM_WINDOWS>
   HZ_BUILD_DLL
 )
+
+target_link_libraries(${PROJECT_NAME} PRIVATE spdlog::spdlog)
